@@ -8,6 +8,8 @@ public class Main {
 		// TODO 自動生成されたメソッド・スタブ
 		Outer outer = new Outer();
 		outer.test();
+		outer.interFace();
+		outer.interFace2();
 	}
 
 }

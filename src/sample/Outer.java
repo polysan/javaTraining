@@ -34,4 +34,28 @@ public class Outer {
 		inner.run();
 	}
 
+	public void interFace() {
+		// 匿名クラス インターフェースの実装クラスを定義せずにメソッドを実行できる
+		// 匿名クラスで生成したインスタンスを変数に代入する場合
+		InterfaceSample a = new InterfaceSample() {
+			@Override
+			public void escape() {
+				System.out.println("escape");
+			};
+		};
+		a.escape();
+	}
+
+	public void interFace2() {
+		// 匿名クラス
+		// 匿名クラスで生成したインスタンスを変数に代入しない場合
+		new InterfaceSample() {
+			@Override
+			public void escape() {
+				System.out.println("escape2");
+			};
+		}.escape();
+
+	}
+
 }
