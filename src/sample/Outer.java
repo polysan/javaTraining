@@ -1,7 +1,7 @@
 package sample;
 
 public class Outer {
-	int outerMember = 100;
+	private int outerMember = 100;
 
 	// インナークラス
 	// Outerのメンバーとして利用する
@@ -29,7 +29,7 @@ public class Outer {
 				System.out.println(a);
 			}
 		}
-
+		
 		Inner inner = new Inner();
 		inner.run();
 	}
