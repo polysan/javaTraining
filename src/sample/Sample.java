@@ -10,7 +10,7 @@ public class Sample implements InterfaceSample {
 		return num;
 	}
 
-	public void setNum(int num) {
+	protected void setNum(int num) {
 		this.num = num;
 	}
 	@Override
