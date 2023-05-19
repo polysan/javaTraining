@@ -1,6 +1,8 @@
 package main;
 
 import enums.Fruits;
+import functionalInterface.B;
+import functionalInterface.SupplierSample;
 import sample.InterfaceSample;
 import sample.Outer;
 import sample.Sample;
@@ -8,7 +10,7 @@ import sample.Sample;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+		System.out.println("---匿名クラス・インターフェース---");
 		Outer outer = new Outer();
 		outer.test();
 		outer.interFace();
@@ -33,6 +35,8 @@ public class Main {
 		sample.escape();
 		Sample.add();
 
+		System.out.println("---匿名クラス・インターフェース---");
+		System.out.println("--enum---");
 		// enum
 		Fruits type = Fruits.MELON;
 		System.out.println(type);
@@ -41,6 +45,14 @@ public class Main {
 			System.out.println(value);
 		}
 		System.out.println(Fruits.valueOf("APPLE"));
+		System.out.println("--enum---");
+
+		SupplierSample a = new SupplierSample();
+		a.exe();
+		// ラムダ式
+		a.exe2(() -> new B());
+		// メソッド参照
+		a.exe2(B::new);
 
 	}
 
