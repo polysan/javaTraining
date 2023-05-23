@@ -1,4 +1,4 @@
-package enums;
+package chapter1.enums;
 
 public enum Fruits {
 	// 列挙が３つあるenumでコンストラクタを定義すると、コンストラクタが3回呼ばれる

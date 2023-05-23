@@ -1,4 +1,4 @@
-package functionalInterface;
+package chapter2.functionalInterface;
 
 public class B implements A {
 

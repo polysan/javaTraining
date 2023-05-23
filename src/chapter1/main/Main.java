@@ -1,11 +1,9 @@
-package main;
+package chapter1.main;
 
-import enums.Fruits;
-import functionalInterface.B;
-import functionalInterface.SupplierSample;
-import sample.InterfaceSample;
-import sample.Outer;
-import sample.Sample;
+import chapter1.enums.Fruits;
+import chapter1.sample.InterfaceSample;
+import chapter1.sample.Outer;
+import chapter1.sample.Sample;
 
 public class Main {
 
@@ -46,14 +44,6 @@ public class Main {
 		}
 		System.out.println(Fruits.valueOf("APPLE"));
 		System.out.println("--enum---");
-
-		SupplierSample a = new SupplierSample();
-		a.exe();
-		// ラムダ式
-		a.exe2(() -> new B());
-		// メソッド参照
-		a.exe2(B::new);
-
 	}
 
 }

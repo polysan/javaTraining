@@ -1,4 +1,4 @@
-package functionalInterface;
+package chapter2.functionalInterface;
 
 import java.util.function.Supplier;
 

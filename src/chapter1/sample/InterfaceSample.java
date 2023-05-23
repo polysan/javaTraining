@@ -1,4 +1,4 @@
-package sample;
+package chapter1.sample;
 
 public interface InterfaceSample {
 	 void escape();

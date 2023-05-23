@@ -1,4 +1,4 @@
-package sample;
+package chapter1.sample;
 
 public class Sample implements InterfaceSample {
 	private int num;
