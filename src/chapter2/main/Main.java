@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import chapter2.functionalInterface.B;
 import chapter2.functionalInterface.SupplierSample;
 
-public class Main2 {
+public class Main {
 
 	public static void main(String[] args) {
 		SupplierSample a = new SupplierSample();
