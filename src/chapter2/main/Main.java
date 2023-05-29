@@ -2,6 +2,7 @@ package chapter2.main;
 
 import java.util.function.Consumer;
 
+import chapter2.comsumer.Item;
 import chapter2.functionalInterface.B;
 import chapter2.functionalInterface.SupplierSample;
 
@@ -14,11 +15,16 @@ public class Main {
 		a.exe2(() -> new B());
 		// メソッド参照
 		a.exe2(B::new);
-		
+
 		Consumer<String> consumer = x -> System.out.println(x);
 		consumer.accept("consumer");
-		
-		
+
+		Item item = new Item.Builder(100).with(b -> {
+			b.name = "orange";
+			b.price = 120;
+		}).build();
+		System.out.println(item);
+
 	}
 
 }
