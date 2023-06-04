@@ -1,10 +1,13 @@
 package chapter2.main;
 
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import chapter2.comsumer.Item;
 import chapter2.functionalInterface.B;
 import chapter2.functionalInterface.SupplierSample;
+import chapter2.predicate.Person;
+import chapter2.predicate.Person.Gender;
 
 public class Main {
 
@@ -24,6 +27,18 @@ public class Main {
 			b.price = 120;
 		}).build();
 		System.out.println(item);
+
+		Predicate<Person> isMale = p -> p.getGender().equals(Gender.MALE);
+		Predicate<Person> isFemale = p -> p.getGender().equals(Gender.FEMALE);
+		Predicate<Person> isAdult = p -> p.getAge() >= 20;
+
+		Person sample = new Person(Gender.FEMALE, 19);
+
+		if (isMale.or(isFemale.and(isAdult)).test(sample)) {
+			System.out.println("OK");
+			return;
+		}
+		System.out.println("NG");
 
 	}
 
