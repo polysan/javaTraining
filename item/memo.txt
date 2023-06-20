@@ -8,3 +8,16 @@ Supplier:引数を受け取らず戻り値を戻す → get
 Consumer:引数を受け取り戻り値なし → accept
 BIConsumer:引数を２つ受け取るConsumer 
 Predicate:引数を受け取りbooleanを返す → test
+Function:引数を受け取り戻り値を戻す → apply
+         andthen → 順番処理
+         compose → 逆順処理
+BIFunction:引数を２つ受け取るFunction
+UnaryOperator:引数を１つ受け取り同じ型の結果を戻す
+			Functionを継承している
+			引数と戻り値の型が同じ
+BinaryOperator:引数を２つ受け取り同じ型の結果を戻す
+				引数の型と戻り値の型が全て同じ
+
+並行処理：シングルコアで処理を切替え、同時に処理してるように見える
+並列処理：複数のコアで同時に処理する
+同期化処理：複数のスレッドが並行して実行されるとき、スレッドの順番を制御する
