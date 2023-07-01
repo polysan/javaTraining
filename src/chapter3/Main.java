@@ -25,12 +25,14 @@ public class Main {
 			System.out.println("sub");
 		});
 
-		NewCashedThreadPool();
+		newCashedThreadPool();
 
-		CyclicBarrier();
+		cyclicBarrier();
+
+		deadLock();
 	}
 
-	private static void NewCashedThreadPool() {
+	private static void newCashedThreadPool() {
 		// スレッドプールを利用したマルチスレッド処理
 		ExecutorService exec = Executors.newCachedThreadPool();
 		Runnable test = () -> {
@@ -65,7 +67,8 @@ public class Main {
 
 	}
 
-	private static void CyclicBarrier() {
+	private static void cyclicBarrier() {
+		// 同期化処理
 		ExecutorService exec = Executors.newFixedThreadPool(5);
 
 		java.util.concurrent.CyclicBarrier barrier = new CyclicBarrier(5,
@@ -76,6 +79,32 @@ public class Main {
 			exec.submit(new Task(barrier));
 
 		}
+	}
+
+	private static void deadLock() {
+		BankAccount a = new BankAccount(100);
+		BankAccount b = new BankAccount(100);
+
+		ExecutorService exec = Executors.newFixedThreadPool(2);
+
+		exec.submit(() -> {
+			synchronized (a) {
+				a.withDrawals(20);
+			}
+			synchronized (b) {
+				b.deposit(20);
+			}
+		});
+		exec.submit(() -> {
+			synchronized (b) {
+				b.withDrawals(30);
+			}
+			synchronized (a) {
+				a.deposit(20);
+			}
+		});
+		System.out.println(a.getBalance());
+		System.out.println(b.getBalance());
 	}
 
 }
