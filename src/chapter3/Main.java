@@ -1,5 +1,6 @@
 package chapter3;
 
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -25,6 +26,8 @@ public class Main {
 		});
 
 		NewCashedThreadPool();
+
+		CyclicBarrier();
 	}
 
 	private static void NewCashedThreadPool() {
@@ -60,6 +63,19 @@ public class Main {
 			e.printStackTrace();
 		}
 
+	}
+
+	private static void CyclicBarrier() {
+		ExecutorService exec = Executors.newFixedThreadPool(5);
+
+		java.util.concurrent.CyclicBarrier barrier = new CyclicBarrier(5,
+				() -> {
+					System.out.println("it's all done");
+				});
+		for (int i = 0; i < 5; i++) {
+			exec.submit(new Task(barrier));
+
+		}
 	}
 
 }
