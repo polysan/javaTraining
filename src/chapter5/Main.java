@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
 
 	public static void main(String[] args) {
-		File file = new File("data.txt");
+		File file = new File("./data.txt");
 		File dir = new File("data");
 		try {
 			// ファイルが存在しなければファイルを作成
