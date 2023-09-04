@@ -1,4 +1,4 @@
-package chapter12;
+package chapter12.samplePolisy;
 
 import java.security.Permission;
 import java.security.PermissionCollection;

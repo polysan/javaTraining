@@ -1,4 +1,4 @@
-package chapter12;
+package chapter12.samplePolisy;
 
 import java.io.FilePermission;
 import java.io.IOException;
