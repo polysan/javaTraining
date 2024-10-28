@@ -29,5 +29,7 @@ public class Main {
 			return total + i;
 		});
 		System.out.println(totalPrice);
+		
+
 	}
 }
